@@ -22,11 +22,11 @@
           <tr>
             <td>
               <%= link_to user_path(book.user.id) do %>
-                <%= image_tag book.user.profile_image, size: '60x60', fallback: 'no_image.jpg' if a_book.user.profile_image.attached? %>                
+                <%= image_tag book.user.profile_image, size: '60x60', fallback: 'no_image.jpg' if book.user.profile_image.attached? %>                
               <% end %>
             </td>
-            <td><%= link_to a_book.title, book_path(a_book.id) %></td>
-            <td><%= a_book.body %></td>
+            <td><%= link_to book.title, book_path(book.id) %></td>
+            <td><%= book.body %></td>
           </tr>
           <% end %>
         </tbody>
